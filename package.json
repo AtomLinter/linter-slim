@@ -1,0 +1,14 @@
+{
+  "name": "linter-slim",
+  "linter-package": true,
+  "activationEvents": [],
+  "main": "./lib/init",
+  "version": "0.1.0",
+  "description": "Lint Slim on the fly",
+  "repository": "https://github.com/lloeki/linter-slim",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}
