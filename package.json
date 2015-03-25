@@ -5,7 +5,7 @@
   "main": "./lib/init",
   "version": "0.2.1",
   "description": "Lint Slim on the fly",
-  "repository": "https://github.com/lloeki/linter-slim",
+  "repository": "https://github.com/AtomLinter/linter-slim",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
