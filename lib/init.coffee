@@ -3,11 +3,13 @@ module.exports =
     slimExecutableDir:
       type: 'string'
       default: ''
+      description: 'Specify unique path to slimrb if not found in environment'
     binaryName:
       type: 'string'
       default: 'slimrb'
       description: 'You might need a different binary name for slimrb'
     rails:
+      description: 'Generates rails compatible code'
       type: 'boolean'
       default: 'true'
     library:
