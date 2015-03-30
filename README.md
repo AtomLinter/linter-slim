@@ -29,7 +29,10 @@ You can configure linter-slim by editing ~/.atom/config.cson (choose Open Your C
 #### slimExecutablePath
 ```
 'linter-slim':
-  'slimExecutablePath': null # slimrb path.
+  'slimExecutableDir': null # slimrb path.
+  'binaryName': null # slimrb path.
+  'rails': true # generates rails compatible code.
+  'library': [] # load library or plugin (e.g. slim/plugin).
 ```
 Run `which slimrb` to find the path,
 if you using rbenv run `rbenv which slimrb`
