@@ -26,7 +26,6 @@ $ apm install linter-slim
 ## Settings
 You can configure linter-slim by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
 
-#### slimExecutablePath
 ```
 'linter-slim':
   'slimExecutableDir': null # slimrb directory path.
