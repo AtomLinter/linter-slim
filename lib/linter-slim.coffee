@@ -24,29 +24,29 @@ class LinterSlim extends Linter
   constructor: (editor)->
     super(editor)
 
-    atom.config.observe 'linter-slim.executableDir', =>
+    @executableDirListener = atom.config.observe 'linter-slim.executableDir', =>
       executableDir = atom.config.get 'linter-slim.executableDir'
 
       if executableDir
-        @executablePath = if executableDir.length > 0
-          executableDir
+        if executableDir.length > 0
+          @executablePath = executableDir
         else
-          null
+          @executablePath = null
 
-    atom.config.observe 'linter-slim.rails', =>
+    @railsListener = atom.config.observe 'linter-slim.rails', =>
       @updateCommand()
 
-    atom.config.observe 'linter-slim.binaryName', =>
+    @binayNameListener = atom.config.observe 'linter-slim.binaryName', =>
       @updateCommand()
 
-    atom.config.observe 'linter-slim.library', =>
+    @libraryListener = atom.config.observe 'linter-slim.library', =>
       @updateCommand()
 
   destroy: ->
-    atom.config.unobserve 'linter-slim.binaryName'
-    atom.config.unobserve 'linter-slim.executableDir'
-    atom.config.unobserve 'linter-slim.rails'
-    atom.config.unobserve 'linter-slim.library'
+    @executableDirListener.dispose()
+    @railsListener.dispose()
+    @binayNameListener.dispose()
+    @libraryListener.dispose()
 
   updateCommand: ->
     binary_name = atom.config.get 'linter-slim.binaryName'

@@ -1,6 +1,6 @@
 module.exports =
   config:
-    slimExecutableDir:
+    executableDir:
       type: 'string'
       default: ''
       description: 'Specify unique path to slimrb if not found in environment'
@@ -9,15 +9,15 @@ module.exports =
       default: 'slimrb'
       description: 'You might need a different binary name for slimrb'
     rails:
-      description: 'Generates rails compatible code'
       type: 'boolean'
-      default: 'true'
+      default: false
+      description: 'Generates rails compatible code'
     library:
-      description: 'List modules to require (e.g. slim/smart)'
       type: 'array'
       default: []
       items:
         type: 'string'
+      description: 'List modules to require (e.g. slim/smart)'
 
   activate: ->
     console.log 'activate linter-slim'
