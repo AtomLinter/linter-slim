@@ -1,12 +1,18 @@
 {
   "name": "linter-slim",
-  "linter-package": true,
-  "activationCommands": {},
   "main": "./lib/init",
-  "version": "0.5.1",
-  "description": "Lint Slim on the fly",
-  "repository": "https://github.com/AtomLinter/linter-slim",
+  "activationCommands": {},
+  "version": "0.6.0",
+  "description": "Lint Slim on the fly, using slimrb",
+  "repository": "https://github.com/AtomLinter/linter-slim.git",
   "license": "MIT",
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
   "engines": {
     "atom": ">0.50.0"
   },
