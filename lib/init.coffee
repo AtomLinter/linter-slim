@@ -51,12 +51,11 @@ module.exports =
               result = data
             exit: (code) ->
               return resolve [] unless code is 0
-              regexp = '(?m)Slim::Parser::(?<error>SyntaxError): (?<message>.+)\n' +
-                      '.+, Line (?<line>\\d+), Column (?<col>\\d+)'
+              regexp = /Slim::Parser::SyntaxError: (.+)\n.+, Line (\d+), Column (\d+)/
 
               match = regexp.exec(result)
               resolve [
-                type: match[1],
+                type: 'SyntaxError',
                 text: match[2],
                 filePath: filePath,
                 range: [
