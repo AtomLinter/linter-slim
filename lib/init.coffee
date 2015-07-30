@@ -42,7 +42,7 @@ module.exports =
           args = [filePath, '--compile']
           args.push '--rails' if @rails
           if @library and @library.length > 0
-            cmd.push '-r', library for library in @library
+            args.push '-r', library for library in @library
 
           process = new BufferedProcess
             command: @executablePath
