@@ -2,7 +2,7 @@
   "name": "linter-slim",
   "main": "./lib/init",
   "activationCommands": {},
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Lint Slim on the fly, using slimrb",
   "repository": "https://github.com/AtomLinter/linter-slim.git",
   "license": "MIT",
