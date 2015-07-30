@@ -3,7 +3,7 @@
   "linter-package": true,
   "activationCommands": {},
   "main": "./lib/init",
-  "version": "0.5.2",
+  "version": "1.0.0",
   "description": "Lint Slim on the fly",
   "repository": "https://github.com/AtomLinter/linter-slim",
   "license": "MIT",
