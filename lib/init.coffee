@@ -46,7 +46,7 @@ module.exports =
           process = new BufferedProcess
             command: @executablePath
             args: args
-            stderr: (data) ->
+            stdout: (data) ->
               regexp = /Slim::Parser::SyntaxError: (.+)\n.+, Line (\d+), Column (\d+)/m
               match = regexp.exec(data)
               resolve [
