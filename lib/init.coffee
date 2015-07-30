@@ -56,12 +56,12 @@ module.exports =
               match = regexp.exec(result)
               resolve [
                 type: 'SyntaxError',
-                text: match[2],
+                text: match[1],
                 filePath: filePath,
                 range: [
                   # Atom expects ranges to be 0-based
-                  [match[3] - 1, match[4] - 1],
-                  [match[3] - 1, match[4]]
+                  [match[2] - 1, match[3] - 1],
+                  [match[2] - 1, match[3]]
                 ]
               ]
 
