@@ -37,7 +37,6 @@ module.exports =
       lintOnFly: true
       lint: (textEditor) =>
         return new Promise (resolve, reject) =>
-          text = []
           filePath = textEditor.getPath()
           args = [filePath, '--compile']
           args.push '--rails' if @rails
@@ -48,12 +47,8 @@ module.exports =
             command: @executablePath
             args: args
             stderr: (data) ->
-              text.push(data)
-            exit: (code) ->
-              return resolve [] unless code is 0
               regexp = /Slim::Parser::SyntaxError: (.+)\n.+, Line (\d+), Column (\d+)/m
-              result = text.join('')
-              match = regexp.exec(result)
+              match = regexp.exec(data)
               resolve [
                 type: 'SyntaxError',
                 text: match[1],
