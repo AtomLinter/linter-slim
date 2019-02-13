@@ -2,6 +2,7 @@
   "name": "linter-slim",
   "main": "./lib/linter-slim",
   "version": "1.0.0",
+  "private": true,
   "description": "Lint Slim on the fly",
   "repository": "https://github.com/AtomLinter/linter-slim",
   "license": "MIT",
@@ -43,6 +44,21 @@
     "eslint-plugin-import": "2.16.0",
     "jasmine-fix": "1.3.1"
   },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "semanticCommits": true,
+    "rangeStrategy": "pin",
+    "packageRules": [
+      {
+        "packagePatterns": [
+          "^eslint"
+        ],
+        "groupName": "ESLint packages"
+      }
+    ]
+  },  
   "package-deps": [
     "linter:2.0.0"
   ],
