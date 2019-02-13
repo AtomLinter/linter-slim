@@ -25,8 +25,8 @@ describe('The slimrb provider for Linter', () => {
     const messages = await lint(editor);
 
     expect(messages.length).toBe(1);
-    expect(messages[0].severity).toEqual('error');
-    expect(messages[0].excerpt).toEqual(excerpt);
+    expect(messages[0].severity).toBe('error');
+    expect(messages[0].excerpt).toBe(excerpt);
     expect(messages[0].location.file).toBe(badFile);
     expect(messages[0].location.position).toEqual([[4, 2], [4, 9]]);
   });
@@ -37,8 +37,8 @@ describe('The slimrb provider for Linter', () => {
     const messages = await lint(editor);
 
     expect(messages.length).toBe(1);
-    expect(messages[0].severity).toEqual('warning');
-    expect(messages[0].excerpt).toEqual(excerpt);
+    expect(messages[0].severity).toBe('warning');
+    expect(messages[0].excerpt).toBe(excerpt);
     expect(messages[0].location.file).toBe(deprecatedFile);
     expect(messages[0].location.position).toEqual([[3, 2], [3, 10]]);
   });
