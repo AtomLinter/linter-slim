@@ -82,9 +82,6 @@ jobs:
           name: Install any remaining dependencies
           command: npm install
       - run:
-          name: Compile sources
-          command: npm run compile
-      - run:
           name: Lint code
           command: npm run lint
   stable:
