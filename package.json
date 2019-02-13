@@ -10,6 +10,7 @@
   },
   "configSchema": {
     "slimrbExecutablePath": {
+      "title": "slimrb executable path",
       "type": "string",
       "description": "The path to the `slimrb` executable. Find by running `which slimrb` or `rbenv which slimrb`",
       "default": "slimrb"
