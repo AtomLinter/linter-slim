@@ -4,6 +4,7 @@
   "activationCommands": {},
   "main": "./lib/init",
   "version": "1.0.0",
+  "private": true,
   "description": "Lint Slim on the fly",
   "repository": "https://github.com/AtomLinter/linter-slim",
   "license": "MIT",
