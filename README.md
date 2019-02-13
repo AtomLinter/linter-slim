@@ -28,8 +28,7 @@ You can configure linter-slim by editing ~/.atom/config.cson (choose Open Your C
 
 ```
 'linter-slim':
-  'executableDir': null # slimrb directory path.
-  'binaryName': slimrb # slimrb binary name.
+  'slimrbExecutablePath': slimrb # slimrb executable path.
   'rails': true # generates rails compatible code.
   'library': [] # load library or plugin (e.g. slim/plugin).
 ```
