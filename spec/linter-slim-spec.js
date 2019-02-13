@@ -31,7 +31,7 @@ describe('The slimrb provider for Linter', () => {
     expect(messages[0].location.position).toEqual([[4, 2], [4, 9]]);
   });
 
-  it('fchecks a file with a deprecation warning and reports the correct message', async () => {
+  it('checks a file with a deprecation warning and reports the correct message', async () => {
     const excerpt = 'Deprecated: =\' for trailing whitespace is deprecated in favor of =>';
     const editor = await atom.workspace.open(deprecatedFile);
     const messages = await lint(editor);
