@@ -11,7 +11,7 @@
   },
   "configSchema": {
     "slimrbExecutablePath": {
-      "title": "slimrb executable path",
+      "title": "slimrb Executable path",
       "type": "string",
       "description": "The path to the `slimrb` executable. Find by running `which slimrb` or `rbenv which slimrb`",
       "default": "slimrb"
@@ -58,7 +58,7 @@
         "groupName": "ESLint packages"
       }
     ]
-  },  
+  },
   "package-deps": [
     "linter:2.0.0"
   ],
