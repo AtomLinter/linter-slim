@@ -4,11 +4,27 @@
   "activationCommands": {},
   "main": "./lib/init",
   "version": "1.0.0",
+  "private": true,
   "description": "Lint Slim on the fly",
   "repository": "https://github.com/AtomLinter/linter-slim",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
+  },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "semanticCommits": true,
+    "rangeStrategy": "pin",
+    "packageRules": [
+      {
+        "packagePatterns": [
+          "^eslint"
+        ],
+        "groupName": "ESLint packages"
+      }
+    ]
   },
   "dependencies": {}
 }
