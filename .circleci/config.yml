@@ -11,8 +11,21 @@ defaults: &defaults
     - attach_workspace:
         at: /tmp
     - run:
-        name: Slim Install
-        command: gem install slim --no-document        
+        name: Install Ruby
+        # Note, using ruby-full instead of ruby for the headers to compile rubocop
+        command: |
+          sudo apt-get update && \
+          sudo apt-get install --assume-yes --quiet --no-install-suggests \
+            --no-install-recommends ruby-full
+    - run:
+        name: Ruby version
+        command: ruby --version
+    - run:
+        name: Update gem
+        command: sudo gem update --system --no-document
+    - run:
+        name: Install Slim
+        command: sudo gem install slim --no-document      
     - run:
         name: Create VFB for Atom to run in
         command: /usr/local/bin/xvfb_start
