@@ -1,15 +1,48 @@
 {
   "name": "linter-slim",
-  "linter-package": true,
-  "activationCommands": {},
-  "main": "./lib/init",
+  "main": "./lib/linter-slim",
   "version": "1.0.0",
   "private": true,
   "description": "Lint Slim on the fly",
   "repository": "https://github.com/AtomLinter/linter-slim",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=1.9.0 <2.0.0"
+  },
+  "configSchema": {
+    "slimrbExecutablePath": {
+      "title": "slimrb Executable path",
+      "type": "string",
+      "description": "The path to the `slimrb` executable. Find by running `which slimrb` or `rbenv which slimrb`",
+      "default": "slimrb"
+    },
+    "rails": {
+      "type": "boolean",
+      "default": false,
+      "description": "Generates rails compatible code"
+    },
+    "library": {
+      "type": "array",
+      "description": "Load specified libraries or plugins (e.g. slim/smart)",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "atom --test spec"
+  },
+  "dependencies": {
+    "atom-linter": "10.0.0",
+    "atom-package-deps": "5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "5.13.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "jasmine-fix": "1.3.1"
   },
   "renovate": {
     "extends": [
@@ -26,5 +59,35 @@
       }
     ]
   },
-  "dependencies": {}
+  "package-deps": [
+    "linter:2.0.0"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "global-require": "off",
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "node": true,
+      "browser": true
+    }
+  }
 }

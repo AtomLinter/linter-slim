@@ -24,14 +24,12 @@ $ apm install linter-slim
 ```
 
 ## Settings
-You can configure linter-slim by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
+Settings can be configured from Atom's settings page in the packages section.
 
-```
-'linter-slim':
-  'executableDir': null # slimrb directory path.
-  'binaryName': slimrb # slimrb binary name.
-  'rails': true # generates rails compatible code.
-  'library': [] # load library or plugin (e.g. slim/plugin).
-```
+Available settings are:
+* **Slimrb Executable Path**: The _full_ path to `slimrb`, for example `/usr/bin/slimrb`. Leave at the default to use the system `$PATH` to find it
+* **Rails**: Whether or not to generate Rails compatible code
+* **Library**: Comma separated list of libraries or plugins to load when linting
+
 Run `which slimrb` to find the path,
 if you using rbenv run `rbenv which slimrb`
