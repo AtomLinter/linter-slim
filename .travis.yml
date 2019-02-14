@@ -2,6 +2,8 @@
 
 language: ruby
 
+env: APM_TEST_PACKAGES="language-slim"
+
 matrix:
   include:
     - os: linux
