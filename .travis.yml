@@ -2,8 +2,6 @@
 
 language: ruby
 
-env: APM_TEST_PACKAGES="language-slim"
-
 matrix:
   include:
     - os: linux
@@ -13,6 +11,10 @@ matrix:
     - os: linux
       rvm: 2.4.1
       env: ATOM_CHANNEL=beta
+
+env:
+  global:
+    APM_TEST_PACKAGES: "language-slim"
 
 install:
   - gem install slim --no-document
